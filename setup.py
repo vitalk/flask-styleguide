@@ -55,6 +55,9 @@ def get_long_description():
 
 install_requires = get_file('requirements.txt')
 tests_require = get_file('requirements-dev.txt')
+extras_require = {
+    'test': tests_require
+}
 
 
 setup(
@@ -77,6 +80,7 @@ setup(
     zip_safe=False,
     platforms='any',
     install_requires=install_requires,
+    extras_require=extras_require,
     tests_require=tests_require,
     test_suite='pytest',
     cmdclass={
