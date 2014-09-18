@@ -53,6 +53,10 @@ def get_long_description():
     return ''.join(readme)
 
 
+install_requires = get_file('requirements.txt')
+tests_require = get_file('requirements-dev.txt')
+
+
 setup(
     name='flask-styleguide',
 
@@ -72,8 +76,8 @@ setup(
     packages=find_packages(exclude=['docs', 'tests']),
     zip_safe=False,
     platforms='any',
-    install_requires=get_file('requirements.txt'),
-    tests_require=get_file('requirements-dev.txt'),
+    install_requires=install_requires,
+    tests_require=tests_require,
     test_suite='pytest',
     cmdclass={
         'test': pytest,
