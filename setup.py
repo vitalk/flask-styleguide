@@ -53,8 +53,8 @@ def get_long_description():
     return ''.join(readme)
 
 
-install_requires = get_file('requirements.txt')
-tests_require = get_file('requirements-dev.txt')
+install_requires = get_file('requirements/main.txt')
+tests_require = get_file('requirements/tests.txt')
 extras_require = {
     'test': tests_require
 }

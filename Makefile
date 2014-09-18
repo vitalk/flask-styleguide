@@ -7,7 +7,7 @@ test:
 
 
 install:
-	@pip install -r requirements.txt
+	@python setup.py install
 
 
 .PHONY: clean test install
