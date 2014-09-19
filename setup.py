@@ -9,6 +9,7 @@
     :copyright: (c) 2014 by Vital Kudzelka <vital.kudzelka@gmail.com>
     :license: MIT
 """
+import os
 import sys
 import subprocess
 from setuptools import setup
@@ -37,23 +38,22 @@ class pytest(Command):
         raise SystemExit(errno)
 
 
-def get_file(filename):
-    """Returns file content line by line."""
+def read(*parts):
+    """Reads the content of the file created from *parts*."""
     try:
-        with open(filename, 'r') as f:
-            rv = f.readlines()
+        with open(os.path.join(*parts), 'r') as f:
+            return f.readlines()
     except IOError:
-        rv = []
-    return rv
+        return []
 
 
 def get_long_description():
-    readme = get_file('README')
+    readme = read('README')
     return ''.join(readme)
 
 
-install_requires = get_file('requirements/main.txt')
-tests_require = get_file('requirements/tests.txt')
+install_requires = read('requirements', 'main.txt')
+tests_require = read('requirements', 'tests.txt')
 extras_require = {
     'test': tests_require
 }
