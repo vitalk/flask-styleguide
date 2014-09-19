@@ -15,8 +15,7 @@ from setuptools import setup
 from setuptools import Command
 from setuptools import find_packages
 
-
-version = "0.1.1"
+from flask.ext.styleguide import __version__
 
 
 class pytest(Command):
@@ -62,11 +61,7 @@ extras_require = {
 
 setup(
     name='Flask-Styleguide',
-
-    # Versions should comply with PEP440. For a discussion on single-sourcing
-    # the version across setup.py and the project code, see
-    # http://packaging.python.org/en/latest/tutorial.html#version
-    version=version,
+    version=__version__,
 
     author='Vital Kudzelka',
     author_email='vital.kudzelka@gmail.com',
