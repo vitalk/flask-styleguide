@@ -11,6 +11,7 @@
 """
 import os
 import sys
+import codecs
 import subprocess
 from setuptools import setup
 from setuptools import Command
@@ -41,7 +42,7 @@ class pytest(Command):
 def read(*parts):
     """Reads the content of the file created from *parts*."""
     try:
-        with open(os.path.join(*parts), 'r') as f:
+        with codecs.open(os.path.join(*parts), 'r', encoding='utf-8') as f:
             return f.readlines()
     except IOError:
         return []
