@@ -1,13 +1,26 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-    flask.ext.styleguide
-    ~~~~~~~~~~~~~~~~~~~~
+Flask-Styleguide
+================
 
-    A live Style Guide for your Flask application.
+Extension provide an easy way to automatically generate styleguide for your
+Flask application from `KSS documentation <http://warpspire.com/kss/>`_
+format.
 
-    :copyright: (c) 2014 by Vital Kudzelka <vital.kudzelka@gmail.com>
-    :license: MIT
+What is KSS
+-----------
+
+KSS is a documentation for humans. It's human readable, machine parsable, and
+easy to remember. `Learn the syntax in less then 5 minites <http://warpspire.com/kss/>`_.
+
+Contributing
+------------
+
+Don't hesitate to create a `GitHub issue
+<https://github.com/vitalk/flask-styleguide/issues>`_ for any **bug** or
+**suggestion**.
+
 """
 import os
 import sys
@@ -48,11 +61,6 @@ def read(*parts):
         return []
 
 
-def get_long_description():
-    readme = read('README')
-    return ''.join(readme)
-
-
 install_requires = read('requirements', 'main.txt')
 tests_require = read('requirements', 'tests.txt')
 extras_require = {
@@ -69,7 +77,7 @@ setup(
 
     url="https://github.com/vitalk/flask-styleguide",
     description='A live Style Guide for your Flask application.',
-    long_description=get_long_description(),
+    long_description=__doc__,
     license='MIT',
 
     packages=find_packages(exclude=['docs', 'tests']),
