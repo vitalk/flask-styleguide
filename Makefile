@@ -1,4 +1,5 @@
 clean:
+	@rm -rf build dist *.egg-info
 	@find . -name *.py? -delete
 
 
@@ -7,7 +8,7 @@ test:
 
 
 install:
-	@pip install -r requirements.txt
+	@python setup.py install
 
 
 .PHONY: clean test install

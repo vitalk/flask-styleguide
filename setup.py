@@ -1,22 +1,36 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-    flask.ext.styleguide
-    ~~~~~~~~~~~~~~~~~~~~
+Flask-Styleguide
+================
 
-    A live Style Guide for your Flask application.
+Extension provide an easy way to automatically generate styleguide for your
+Flask application from `KSS documentation <http://warpspire.com/kss/>`_
+format.
 
-    :copyright: (c) 2014 by Vital Kudzelka <vital.kudzelka@gmail.com>
-    :license: MIT
+What is KSS
+-----------
+
+KSS is a documentation for humans. It's human readable, machine parsable, and
+easy to remember. `Learn the syntax in less then 5 minites <http://warpspire.com/kss/>`_.
+
+Contributing
+------------
+
+Don't hesitate to create a `GitHub issue
+<https://github.com/vitalk/flask-styleguide/issues>`_ for any **bug** or
+**suggestion**.
+
 """
+import os
 import sys
+import codecs
 import subprocess
 from setuptools import setup
 from setuptools import Command
 from setuptools import find_packages
 
-
-version = "0.1.0"
+from flask.ext.styleguide import __version__
 
 
 class pytest(Command):
@@ -38,47 +52,47 @@ class pytest(Command):
         raise SystemExit(errno)
 
 
-def get_file(filename):
-    """Returns file content line by line."""
+def read(*parts):
+    """Reads the content of the file created from *parts*."""
     try:
-        with open(filename, 'r') as f:
-            rv = f.readlines()
+        with codecs.open(os.path.join(*parts), 'r', encoding='utf-8') as f:
+            return f.readlines()
     except IOError:
-        rv = []
-    return rv
+        return []
 
 
-def get_long_description():
-    readme = get_file('README')
-    return ''.join(readme)
+install_requires = read('requirements', 'main.txt')
+tests_require = read('requirements', 'tests.txt')
+extras_require = {
+    'test': tests_require
+}
 
 
 setup(
-    name='flask-styleguide',
-
-    # Versions should comply with PEP440. For a discussion on single-sourcing
-    # the version across setup.py and the project code, see
-    # http://packaging.python.org/en/latest/tutorial.html#version
-    version=version,
+    name='Flask-Styleguide',
+    version=__version__,
 
     author='Vital Kudzelka',
     author_email='vital.kudzelka@gmail.com',
 
     url="https://github.com/vitalk/flask-styleguide",
     description='A live Style Guide for your Flask application.',
-    long_description=get_long_description(),
+    download_url='https://github.com/vitalk/flask-styleguide/tarball/%s' % __version__,
+    long_description=__doc__,
     license='MIT',
 
     packages=find_packages(exclude=['docs', 'tests']),
     zip_safe=False,
     platforms='any',
-    install_requires=get_file('requirements.txt'),
-    tests_require=get_file('requirements-dev.txt'),
-    test_suite='pytest',
+    install_requires=install_requires,
+    extras_require=extras_require,
+    tests_require=tests_require,
+    test_suite='tests',
     cmdclass={
         'test': pytest,
     },
 
+    keywords='flask live styleguide',
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         'Development Status :: 3 - Alpha',
@@ -87,6 +101,7 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
+        'Framework :: Flask',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ]
