@@ -77,6 +77,7 @@ setup(
 
     url="https://github.com/vitalk/flask-styleguide",
     description='A live Style Guide for your Flask application.',
+    download_url='https://github.com/vitalk/flask-styleguide/tarball/%s' % __version__,
     long_description=__doc__,
     license='MIT',
 
