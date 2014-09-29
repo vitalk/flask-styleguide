@@ -87,26 +87,26 @@ class TestJinjaExtension(TempdirHelper):
         self.jinja_env.styleguide_template_name = 'custom.html'
 
     def render_template(self, ref, example=''):
-        template_string = """
-            {%% styleguide %(ref)s %%}
-                %(example)s
-            {%% endstyleguide %%}
-        """ % dict(ref=ref, example=example)
+        template_string = (
+            "{%% styleguide %(ref)s %%}"
+            "%(example)s"
+            "{%% endstyleguide %%}"
+        ) % dict(ref=ref, example=example)
 
         template = self.jinja_env.from_string(template_string)
-        return template.render().strip()
+        return template.render()
 
     def test_render_section(self):
-        assert self.render_template('1.1') == '1.1'
+        assert self.render_template('1.1') == '1.1\n'
 
     def test_render_subsections_as_well(self):
-        assert self.render_template('1') == '1.1\n1.2'
+        assert self.render_template('1') == '1.1\n1.2\n'
 
     def test_render_when_section_does_not_exist(self):
         assert self.render_template('0') == ''
 
     def test_kss_parser_caches_output(self):
-        assert self.render_template('1') == '1.1\n1.2'
+        assert self.render_template('1') == '1.1\n1.2\n'
 
         self.create_files(('static/buttons.css', 'static/minibuttons.css'))
-        assert self.render_template('1') == '1.1\n1.2'
+        assert self.render_template('1') == '1.1\n1.2\n'
