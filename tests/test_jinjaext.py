@@ -4,6 +4,7 @@ import os
 import pytest
 import shutil
 import tempfile
+import textwrap
 
 from pykss import Parser
 from jinja2 import Template
@@ -74,7 +75,7 @@ class TestJinjaExtension(TempdirHelper):
             */
             .minibutton {}
         """,
-        'templates/custom.html': "{{ section.section }}\n\n",
+        'templates/custom.html': "{{ section.section }}{{ section.example }}\n\n",
     }
 
     def setup(self):
@@ -110,3 +111,12 @@ class TestJinjaExtension(TempdirHelper):
 
         self.create_files(('static/buttons.css', 'static/minibuttons.css'))
         assert self.render_template('1') == '1.1\n1.2\n'
+
+    def test_dedent_example(self):
+        example_html = """
+        <button>
+            <i></i>
+        </button>
+        """
+        expected_html = textwrap.dedent(example_html)
+        assert self.render_template('1.1', example_html) == '1.1%s\n' % expected_html
