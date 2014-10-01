@@ -9,6 +9,7 @@
     :copyright: (c) 2014 by Vital Kudzelka <vital.kudzelka@gmail.com>
     :license: MIT
 """
+import textwrap
 from jinja2 import nodes
 from jinja2 import Template
 from jinja2.ext import Extension
@@ -58,7 +59,7 @@ class StyleguideExtension(Extension):
 
         :param ref: The section reference in styleguide to render.
         """
-        example_html = caller()
+        example_html = textwrap.dedent(caller())
         reference = text_type(reference)
         kss_parser = self.environment.styleguide_kss_parser
         template_name = self.environment.styleguide_template_name
