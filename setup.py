@@ -23,14 +23,13 @@ Don't hesitate to create a `GitHub issue
 
 """
 import os
+import re
 import sys
 import codecs
 import subprocess
 from setuptools import setup
 from setuptools import Command
 from setuptools import find_packages
-
-from flask.ext.styleguide import __version__
 
 
 class pytest(Command):
@@ -61,6 +60,16 @@ def read(*parts):
         return []
 
 
+def get_version():
+    version_file = ''.join(read('flaskext', 'styleguide', '__init__.py'))
+    version_match = re.search(r'^__version__ = [\'"]([^\'"]*)[\'"]',
+                              version_file, re.MULTILINE)
+    if version_match:
+        return version_match.group(1)
+    raise RuntimeError('Unable to find version string.')
+
+
+__version__ = get_version()
 install_requires = read('requirements', 'main.txt')
 tests_require = read('requirements', 'tests.txt')
 extras_require = {
