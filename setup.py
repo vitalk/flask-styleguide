@@ -46,7 +46,7 @@ class pytest(Command):
     def run(self):
         basecmd = [sys.executable, '-m', 'pytest']
         if self.coverage:
-            basecmd += ['--cov', 'flaskext']
+            basecmd += ['--cov', 'flask_styleguide']
         errno = subprocess.call(basecmd + ['tests'])
         raise SystemExit(errno)
 
@@ -61,7 +61,7 @@ def read(*parts):
 
 
 def get_version():
-    version_file = ''.join(read('flaskext', 'styleguide', '__init__.py'))
+    version_file = ''.join(read('flask_styleguide', '__init__.py'))
     version_match = re.search(r'^__version__ = [\'"]([^\'"]*)[\'"]',
                               version_file, re.MULTILINE)
     if version_match:

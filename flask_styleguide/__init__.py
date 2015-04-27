@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-    flask.ext.styleguide
-    ~~~~~~~~~~~~~~~~~~~~
+    flask_styleguide
+    ~~~~~~~~~~~~~~~~
 
     A live Style Guide for your Flask application.
 
