@@ -11,7 +11,7 @@ from jinja2 import Template
 from jinja2 import Environment
 from jinja2 import FileSystemLoader
 
-from flask.ext.styleguide.jinjaext import StyleguideExtension
+from flask_styleguide.jinjaext import StyleguideExtension
 
 
 class TempdirHelper(object):

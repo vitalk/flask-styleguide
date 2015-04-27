@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-    flask.ext.styleguide.core
-    ~~~~~~~~~~~~~~~~~~~~~~~~~
+    flask_styleguide.core
+    ~~~~~~~~~~~~~~~~~~~~~
 
     Core module of the extension.
 

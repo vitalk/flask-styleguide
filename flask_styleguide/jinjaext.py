@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-    flask.ext.styleguide.jinjaext
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    flask_styleguide.jinjaext
+    ~~~~~~~~~~~~~~~~~~~~~~~~~
 
     Jinja extension to render KSS Style Guide.
 
