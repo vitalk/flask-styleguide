@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import pytest
 
-from flask.ext.styleguide import key
+from flask_styleguide import key
 
 
 def test_append_extension_prefix_to_config_key():

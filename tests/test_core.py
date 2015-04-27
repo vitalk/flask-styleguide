@@ -4,8 +4,8 @@ import pytest
 
 from flask import Flask
 from flask import Blueprint
-from flask.ext.styleguide import key
-from flask.ext.styleguide import get_static_paths
+from flask_styleguide import key
+from flask_styleguide import get_static_paths
 
 
 class TestExtension(object):

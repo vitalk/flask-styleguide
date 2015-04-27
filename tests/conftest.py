@@ -4,8 +4,8 @@ import pytest
 
 from flask import Flask
 from flask import Blueprint
-from flask.ext.styleguide import key
-from flask.ext.styleguide import Styleguide
+from flask_styleguide import key
+from flask_styleguide import Styleguide
 
 
 def create_app(import_name=__name__, static_path=None,
