@@ -41,7 +41,7 @@ class StyleguideExtension(Extension):
         )
 
     def parse(self, parser):
-        lineno = parser.stream.next().lineno
+        lineno = next(parser.stream).lineno
 
         # Parse a single expression that is used as guide reference.
         args = [parser.parse_expression()]

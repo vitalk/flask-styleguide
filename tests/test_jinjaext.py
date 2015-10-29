@@ -36,7 +36,7 @@ class TempdirHelper(object):
     def create_files(self, files):
         """Create files for test suite. Use list to create empty files."""
         if not hasattr(files, 'items'):
-            files = {filename: '' for filename in files}
+            files = dict((filename, '') for filename in files)
         for filename, data in files.items():
             path = self.path(filename)
             directory = os.path.dirname(path)
