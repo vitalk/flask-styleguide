@@ -85,7 +85,7 @@ setup(
     author_email='vital.kudzelka@gmail.com',
 
     url="https://github.com/vitalk/flask-styleguide",
-    description='A live Style Guide for your Flask application.',
+    description='A living Styleguide for your Flask application.',
     download_url='https://github.com/vitalk/flask-styleguide/tarball/%s' % __version__,
     long_description=__doc__,
     license='MIT',
