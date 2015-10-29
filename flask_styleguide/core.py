@@ -60,7 +60,7 @@ def get_static_paths(app):
     :param app: The :class:`Flask` instance to inspect.
     """
     paths = []
-    for app_or_bp in [app] + app.blueprints.values():
+    for app_or_bp in [app] + list(app.blueprints.values()):
         if app_or_bp.has_static_folder:
             paths.append(app_or_bp.static_folder)
             continue
