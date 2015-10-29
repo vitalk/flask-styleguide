@@ -1,8 +1,8 @@
 Changelog
 =========
 
-Upcoming release
-----------------
+0.2.0
+-----
 
 - Set package status to beta :tada:
 
