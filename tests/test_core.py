@@ -21,7 +21,7 @@ class TestExtension(object):
     def test_get_static_paths_if_app_has_static_folder(self, app):
         assert get_static_paths(app) == [app.static_folder]
 
-    @pytest.mark.app(static_folder=None)
+    @pytest.mark.options(static_folder=None)
     def test_get_static_paths_if_app_has_no_static_folder(self, app):
         assert get_static_paths(app) == []
 

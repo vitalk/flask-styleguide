@@ -26,7 +26,7 @@ def app(request):
     """Use `pytest.mark` decorator to pass options to your application
     factory::
 
-        @pytest.mark.app(static_folder='assets')
+        @pytest.mark.options(static_folder='assets')
         def test_app(app):
             pass
 
@@ -40,8 +40,8 @@ def app(request):
     options = dict(debug=True, testing=True, secret='secret')
 
     # Update application options from pytest environment
-    if 'app' in request.keywords:
-        options.update(request.keywords['app'].kwargs)
+    if 'options' in request.keywords:
+        options.update(request.keywords['options'].kwargs)
 
     app = create_app(**options)
 
