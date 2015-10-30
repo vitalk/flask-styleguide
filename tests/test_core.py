@@ -14,7 +14,7 @@ class TestExtension(object):
         assert app.jinja_env.styleguide_kss_parser is not None
         assert app.jinja_env.styleguide_template_name == 'styleguide/section.html'
 
-    @pytest.mark.config(template_name='custom.html')
+    @pytest.mark.options(template_name='custom.html')
     def test_configure_extension(self, app, config):
         assert app.jinja_env.styleguide_template_name == 'custom.html'
 
