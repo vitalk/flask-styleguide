@@ -51,15 +51,3 @@ def app(request):
     Styleguide(app)
 
     return app
-
-
-@pytest.fixture()
-def client(app):
-    """Test client for application."""
-    return app.test_client()
-
-
-@pytest.fixture()
-def config(app):
-    """Application config."""
-    return app.config
