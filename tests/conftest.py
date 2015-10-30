@@ -3,7 +3,6 @@
 import pytest
 
 from flask import Flask
-from flask import Blueprint
 from flask_styleguide import key
 from flask_styleguide import Styleguide
 
