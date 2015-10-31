@@ -1,6 +1,11 @@
 Changelog
 =========
 
+Upcoming release
+----------------
+
+- Refactor test suite; use pytest-flask for testing.
+
 0.2.0
 -----
 
