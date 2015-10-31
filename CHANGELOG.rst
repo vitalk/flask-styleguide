@@ -4,6 +4,8 @@ Changelog
 Upcoming release
 ----------------
 
+- Add missed files into source distribution.
+
 - Remove executable bit from py files.
 
 - Refactor test suite; use pytest-flask for testing.
