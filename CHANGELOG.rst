@@ -1,8 +1,8 @@
 Changelog
 =========
 
-Upcoming release
-----------------
+0.3.0
+-----
 
 - Add missed files into source distribution.
 
