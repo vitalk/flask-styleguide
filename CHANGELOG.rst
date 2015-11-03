@@ -1,6 +1,15 @@
 Changelog
 =========
 
+0.3.0
+-----
+
+- Add missed files into source distribution.
+
+- Remove executable bit from py files.
+
+- Refactor test suite; use pytest-flask for testing.
+
 0.2.0
 -----
 

@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import inspect
 import pytest
 
 from flask import Flask
-from flask import Blueprint
 from flask_styleguide import key
 from flask_styleguide import Styleguide
 
@@ -25,44 +25,29 @@ def create_app(import_name=__name__, static_path=None,
 @pytest.fixture()
 def app(request):
     """Use `pytest.mark` decorator to pass options to your application
-    factory::
+    factory or configure extension::
 
-        @pytest.mark.app(static_folder='assets')
-        def test_app(app):
-            pass
-
-    Set options to extension, e.g.::
-
-        @pytest.mark.config(foo=42)
+        @pytest.mark.options(static_folder='assets')
         def test_app(app):
             pass
 
     """
     options = dict(debug=True, testing=True, secret='secret')
+    extra_options = {}
 
-    # Update application options from pytest environment
-    if 'app' in request.keywords:
-        options.update(request.keywords['app'].kwargs)
+    # Update application options from pytest environment if they names
+    # match with factory spec and use them to configure extension otherwise.
+    func_spec = inspect.getargspec(create_app)
+    if 'options' in request.keywords:
+        for name, value in request.keywords['options'].kwargs.items():
+            if name in func_spec.args:
+                options[name] = value
+            else:
+                extra_options[key(name)] = value
 
     app = create_app(**options)
-
-    # Update extension options from pytest environment
-    if 'config' in request.keywords:
-        for name, value in request.keywords['config'].kwargs.items():
-            app.config[key(name)] = value
+    app.config.update(extra_options)
 
     Styleguide(app)
 
     return app
-
-
-@pytest.fixture()
-def client(app):
-    """Test client for application."""
-    return app.test_client()
-
-
-@pytest.fixture()
-def config(app):
-    """Application config."""
-    return app.config
