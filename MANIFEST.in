@@ -1,4 +1,4 @@
 include Makefile
-include *.rst
 recursive-include tests *.py
 recursive-include requirements *.txt
+recursive-include docs *.rst
