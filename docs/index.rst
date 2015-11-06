@@ -5,6 +5,8 @@ Extension provides an easy way to automatically generate living styleguide
 for your application from `KSS documentation <http://warpspire.com/kss/>`_
 format.
 
+|Living Styleguide|
+
 .. note::
 
     KSS is a documentation for humans. It's human readable, machine parsable,
@@ -28,3 +30,8 @@ format.
 .. include:: tutorial.rst
 .. include:: contributing.rst
 .. include:: changelog.rst
+
+
+.. |Living Styleguide| image:: _static/living-styleguide.png
+   :target: https://vitalk.github.io/flask-styleguide-example
+   :alt: Example of living Styleguide build with Flask-Styleguide and Frozen-Flask
