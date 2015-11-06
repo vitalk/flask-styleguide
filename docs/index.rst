@@ -1,27 +1,30 @@
-Welcome to Flask-Styleguide documentation!
-==========================================
+Flask-Styleguide
+================
 
-Extension provide an easy way to automatically generate styleguide for your
-Flask application from `KSS documentation <http://warpspire.com/kss/>`_
+Extension provides an easy way to automatically generate living styleguide
+for your application from `KSS documentation <http://warpspire.com/kss/>`_
 format.
 
+.. note::
 
-User's Guide
-------------
+    KSS is a documentation for humans. It's human readable, machine parsable,
+    and easy to remember. `Learn the syntax in less then 5 minutes
+    <http://warpspire.com/kss/>`_.
 
-This guide describes how to generate your own styleguide for any flask
-application.
+    .. code:: css
 
-.. toctree::
-   :maxdepth: 4
+        // A standard, but classy, button used widely for submit forms and
+        // to complete other app actions.
+        //
+        // :hover - Hover state.
+        // :active - When the button is pressed.
+        // :focus - When the button is focused.
+        // :disabled - Disabled state.
+        // .is-disabled - Same as above.
+        //
+        // Styleguide 2.1.
 
-   changelog
 
-
-Contributing
-------------
-
-Don't hesitate to create a `GitHub issue
-<https://github.com/vitalk/flask-styleguide/issues>`_ for any **bug** or
-**suggestion**.
-
+.. include:: tutorial.rst
+.. include:: contributing.rst
+.. include:: changelog.rst
