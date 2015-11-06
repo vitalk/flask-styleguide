@@ -1,0 +1,8 @@
+*.egg-info
+*.py?
+.*
+build
+dist
+venv
+gh-pages
+docs/_build
