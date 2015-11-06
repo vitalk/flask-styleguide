@@ -4,15 +4,16 @@
 Flask-Styleguide
 ================
 
-Extension provide an easy way to automatically generate styleguide for your
-Flask application from `KSS documentation <http://warpspire.com/kss/>`_
+Extension provides an easy way to automatically generate living styleguide
+for your application from `KSS documentation <http://warpspire.com/kss/>`_
 format.
 
 What is KSS
 -----------
 
 KSS is a documentation for humans. It's human readable, machine parsable, and
-easy to remember. `Learn the syntax in less then 5 minites <http://warpspire.com/kss/>`_.
+easy to remember. `Learn the syntax in less then 5 minutes
+<http://warpspire.com/kss/>`_.
 
 Contributing
 ------------
