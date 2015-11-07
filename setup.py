@@ -22,6 +22,14 @@ Don't hesitate to create a `GitHub issue
 <https://github.com/vitalk/flask-styleguide/issues>`_ for any **bug** or
 **suggestion**.
 
+Links
+-----
+
+* Documentation: http://flask-styleguide.readthedocs.org
+* GitHub: https://github.com/vitalk/flask-styleguide
+* PyPI: https://pypi.python.org/pypi/flask-styleguide
+* Example: https://vitalk.github.io/flask-styleguide-example
+
 """
 import io
 import os
