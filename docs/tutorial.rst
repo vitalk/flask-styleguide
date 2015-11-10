@@ -67,3 +67,18 @@ initialized, so it's easy to scaffold your styleguide:
             <pre>{{ section.example|forceescape }}</pre>
           </div>
         </article>
+
+Depending on the template you are using, apply some styles to it.
+
+.. note::
+
+    This example uses `less <http://lesscss.org>`_ and can be installed via
+    `bower <http://bower.io>`_:
+
+    .. code-block:: sh
+
+        bower install --save classy-style-guide
+
+    .. code-block:: css
+
+        @import 'classy-style-guide/components.style-guide.less';
