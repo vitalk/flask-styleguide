@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+0.4.0
+~~~~~
+
+- Add documentation.
+
 0.3.0
 ~~~~~
 
