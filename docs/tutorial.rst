@@ -17,7 +17,7 @@ Define endpoint for your styleguide in application or blueprint::
         return render_template('styleguide.html')
 
 The new jinja tag ``styleguide`` becomes available when extension is
-initialized, so it's easy to scaffold your styleguide:
+initialized, so it’s easy to scaffold your styleguide:
 
 .. code-block:: html+jinja
 
